@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal - Comment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sample Article -->
+    <article class="article">
+        <h1>Breaking News: Sheikh Hasina's death sentence </h1>
+        <p>Bangladesh's ousted leader Sheikh Hasina sentenced to death after crimes against humanity conviction </p>
+    </article>
+
+    <!-- Comment Statistics -->
+    <section class="comment-stats">
+        <div class="stat-item">
+            <h3>Total Comments</h3>
+            <span id="total-comments">0</span>
+        </div>
+        <div class="stat-item">
+            <h3>Average Rating</h3>
+            <span id="average-rating">0.0</span>
+        </div>
+    </section>
+
+    <!-- Comment Form -->
+    <section class="comment-section">
+        <h2>Leave a Comment</h2>
+        <form id="comment-form" class="comment-form">
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" minlength="2" maxlength="50" required>
+                <span class="error-message" id="name-error"></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <!-- Comment Field -->
+            <div class="form-group">
+                <label for="comment">Comment *</label>
+                <textarea id="comment" name="comment" minlength="10" maxlength="500" required></textarea>
+                <span class="error-message" id="comment-error"></span>
+                <div class="char-count">
+                    <span id="char-count">0</span>/500 characters
+                </div>
+            </div>
+
+            <!-- Star Rating -->
+            <div class="form-group">
+                <label>Content Rating (Optional)</label>
+                <div class="star-rating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+                <div class="rating-display">
+                    Selected Rating: <span id="selected-rating">None</span>
+                </div>
+                <input type="hidden" id="rating" name="rating" value="0">
+            </div>
+
+            <button type="submit" class="submit-btn">Post Comment</button>
+        </form>
+    </section>
+
+    <!-- Comments Display -->
+    <section class="comments-display">
+        <h2>Comments</h2>
+        <div id="comments-list">
+            <!-- Comments will be dynamically added here -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
